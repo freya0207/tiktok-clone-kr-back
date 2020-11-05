@@ -6,7 +6,7 @@ import Videos from './dbModel.js'
 
 // app config
 const app = express();
-const port = 9000;
+const port = process.env.PORT || 9000;
 
 // middlewares
 app.use(Cors());
@@ -22,7 +22,7 @@ mongoose.connect(connection_url, {
 
 // api endpoints
 app.get('/', (req, res) => {
-    res.status(200).send("KKM is 천재");
+    res.status(200).send("KKM is king of nomusa");
 });
 
 app.get('/v1/posts', (req, res) => {

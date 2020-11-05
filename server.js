@@ -27,7 +27,16 @@ app.get('/', (req, res) => {
 
 app.get('/v1/posts', (req, res) => {
     res.status(200).send(Data);
+});
 
+app.get('/v2/posts', (req, res) => {
+    Videos.find({}, (err, data) => {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.status(201).send(data);
+        }
+    });
 });
 
 app.post('/v2/posts', (req, res) => {
@@ -42,8 +51,8 @@ app.post('/v2/posts', (req, res) => {
         } else {
             res.status(201).send(data);
         }
-    })
-})
+    });
+});
 
 // listen
 app.listen(port, () => console.log(`we are listening at ${port}`))

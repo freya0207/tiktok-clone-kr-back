@@ -20,7 +20,6 @@ mongoose.connect(connection_url, {
     useUnifiedTopology: true
 })
 
-
 // api endpoints
 app.get('/', (req, res) => {
     res.status(200).send("KKM is 천재");
@@ -45,7 +44,6 @@ app.post('/v2/posts', (req, res) => {
         }
     })
 })
-
 
 // listen
 app.listen(port, () => console.log(`we are listening at ${port}`))
